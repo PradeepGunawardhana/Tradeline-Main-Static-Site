@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Trade Line International - A trusted corporate group specializing in leather goods, travel essentials, and premium coffee. Building quality brands for global markets.">
+    <title>Trade Line International - Corporate Group</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-accent rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">TL</span>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold text-slate-900">Trade Line International</div>
+                        <div class="text-xs text-slate-500 font-medium">Corporate Group</div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-1">
+                    <!-- <a href="#" onclick="showPage('home')" -->
+                    <a href="#" onclick="showPage('home') "
+                        class="nav-link active px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-all  ">Home</a>
+                    <a href="#" onclick="showPage('about') "
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-all">About</a>
+                    <a href="#" onclick="showPage('businesses')"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-all">Businesses</a>
+                    <a href="#" onclick="showPage('whyUS')"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-all">Why
+                        Us</a>
+                    <a href="#" onclick="showPage('contact')"
+                        class="px-4 py-2 ml-3 rounded-lg text-sm font-semibold text-white gradient-accent hover:opacity-90 transition-all">Contact</a>
+                </div>
+
+                <button class="md:hidden text-slate-700" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#" onclick="showPage('home')"
+                    class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Home</a>
+                <a href="#" onclick="showPage('about')"
+                    class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">About</a>
+                <a href="#" onclick="showPage('businesses')"
+                    class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Businesses</a>
+                <a href="#" onclick="showPage('why-us')"
+                    class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Why
+                    Us</a>
+                <a href="#" onclick="showPage('contact')"
+                    class="block px-4 py-3 rounded-lg text-sm font-semibold text-white gradient-accent text-center">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="gradient-primary pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-400 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="text-center animate-in">
+                    <div class="inline-block mb-4 px-4 py-2 rounded-full glass border border-white/20">
+                        <span class="text-cyan-300 text-sm font-semibold">Trusted Global Corporate Group</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        Building Quality Brands<br />for <span class="text-gradient">Global Markets</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                        A trusted corporate group specializing in leather goods, travel essentials, and premium coffee
+                        products
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#" onclick="showPage('businesses')"
+                            class="px-8 py-4 gradient-accent text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-lg shadow-cyan-500/30">
+                            Explore Our Businesses
+                        </a>
+                        <a href="#" onclick="showPage('contact')"
+                            class="px-8 py-4 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-16 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-slate-900 mb-2">15+</div>
+                        <div class="text-slate-600 font-medium">Years Excellence</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-slate-900 mb-2">3</div>
+                        <div class="text-slate-600 font-medium">Business Divisions</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-slate-900 mb-2">50+</div>
+                        <div class="text-slate-600 font-medium">Global Partners</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-slate-900 mb-2">100%</div>
+                        <div class="text-slate-600 font-medium">Quality Commitment</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Areas -->
+        <section class="py-20 lg:py-32 bg-gradient-to-b from-white to-slate-50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Our Business Divisions</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">Three specialized brands delivering excellence
+                        in their respective markets</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-8 hover-lift border border-slate-200">
+                        <div
+                            class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/30">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Leather Division</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">Premium leather goods and accessories crafted
+                            with precision and durability for modern professionals and travelers.</p>
+                        <div class="flex items-center text-cyan-600 font-semibold">
+                            <span>Learn More</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 hover-lift border border-slate-200">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Travel Essentials</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">Comprehensive range of travel products designed
+                            to make every journey comfortable, secure, and hassle-free.</p>
+                        <div class="flex items-center text-cyan-600 font-semibold">
+                            <span>Learn More</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 hover-lift border border-slate-200">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-900 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Premium Coffee</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6">Sourcing and distributing finest coffee beans
+                            from select origins, delivering exceptional quality in every cup.</p>
+                        <div class="flex items-center text-cyan-600 font-semibold">
+                            <span>Learn More</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 lg:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">What Sets Us Apart</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">Industry expertise combined with
+                        customer-focused solutions</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl flex items-center justify-center">
+                            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Quality First</h3>
+                        <p class="text-slate-600">Rigorous quality control ensures international standards</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl flex items-center justify-center">
+                            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Global Reach</h3>
+                        <p class="text-slate-600">Established network spanning multiple continents</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl flex items-center justify-center">
+                            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Reliable Partner</h3>
+                        <p class="text-slate-600">Long-term relationships built on trust</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl flex items-center justify-center">
+                            <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">B2B Expertise</h3>
+                        <p class="text-slate-600">Specialized solutions for wholesale clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 gradient-primary relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Partner With Us?</h2>
+                <p class="text-xl text-slate-300 mb-10">Join our growing network of satisfied business partners
+                    worldwide</p>
+                <a onclick="showPage('contact')"
+                    class="inline-block px-10 py-5 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all shadow-2xl">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT US PAGE -->
+    <div id="about" class="page-content">
+
+        <section class="gradient-primary pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden  ">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-400 rounded-full blur-3xl "></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center animate-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Corporate Identity</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    Trade Line International is a diversified corporate group dedicated to building premium brands that
+                    define quality and trust across global markets.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-6">Our Story & Background</h2>
+                        <div class="space-y-4 text-slate-600 leading-relaxed text-lg">
+                            <p>
+                                Founded with a vision to bridge the gap between high-quality manufacturing and global
+                                accessibility, Trade Line International has grown into a trusted name with over 15 years
+                                of excellence.
+                            </p>
+                            <p>
+                                What began as a focused venture has evolved into a multi-divisional corporate group.
+                                Today, we manage a diverse portfolio ranging from the craftsmanship of premium leather
+                                to the precision of travel essentials and the art of specialty coffee.
+                            </p>
+                            <p>
+                                Our journey is defined by a simple philosophy: consistency creates trust. By maintaining
+                                rigorous standards across all our business areas, we have established a footprint that
+                                spans continents.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div class="text-4xl font-bold text-cyan-600 mb-2">15+</div>
+                            <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Years of
+                                Experience</div>
+                        </div>
+                        <div class="p-8 bg-slate-900 rounded-2xl">
+                            <div class="text-4xl font-bold text-white mb-2">50+</div>
+                            <div class="text-sm font-semibold text-slate-300 uppercase tracking-wider">Global Partners
+                            </div>
+                        </div>
+                        <div class="p-8 bg-slate-100 rounded-2xl border border-slate-200">
+                            <div class="text-4xl font-bold text-slate-900 mb-2">3</div>
+                            <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Specialized
+                                Divisions</div>
+                        </div>
+                        <div class="p-8 gradient-accent rounded-2xl">
+                            <div class="text-4xl font-bold text-white mb-2">100%</div>
+                            <div class="text-sm font-semibold text-white/80 uppercase tracking-wider">Quality Assurance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
+                        <div class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            To be recognized as a premier global leader that sets the benchmark for quality and
+                            integrity across every industry we enter, fostering sustainable growth for our partners and
+                            communities.
+                        </p>
+                    </div>
+                    <div class="gradient-primary p-10 rounded-3xl shadow-xl">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            To deliver exceptional value through specialized expertise, innovative sourcing, and an
+                            unwavering commitment to international quality standards in leather, travel, and
+                            hospitality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Core Values</h2>
+                    <p class="text-slate-600">The pillars that support our corporate culture</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="text-cyan-600 font-bold text-xl mb-3">Uncompromising Quality</div>
+                        <p class="text-slate-600">We believe quality is not an act, but a habit. Every product under our
+                            group undergoes meticulous inspection.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-cyan-600 font-bold text-xl mb-3">Global Integrity</div>
+                        <p class="text-slate-600">We maintain transparent and ethical business practices, ensuring we
+                            remain a reliable partner for international stakeholders.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-cyan-600 font-bold text-xl mb-3">Customer Centricity</div>
+                        <p class="text-slate-600">Our brands are built by listening to global market needs and
+                            delivering solutions that enhance the consumer experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 gradient-primary relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl font-bold text-white mb-6">Commitment to Quality & Trust</h2>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    At Trade Line International, we understand that our reputation is built on the reliability of our
+                    products. Whether it is a hand-crafted leather bag, a secure travel accessory, or a premium cup of
+                    coffee, we apply the same rigorous B2B expertise and quality control to ensure excellence every
+                    single time.
+                </p>
+                <div class="inline-flex items-center space-x-2 text-cyan-400 font-semibold">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.64.304 1.24.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>International Standards Certified</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BUSINESSES PAGE -->
+    <div id="businesses" class="page-content">
+        <section class="gradient-primary pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Business Divisions</h1>
+                    <p class="text-xl text-slate-300 max-w-3xl mx-auto">Three specialized brands delivering excellence
+                        in their respective markets</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gradient-to-b from-white to-slate-50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Leather Division -->
+                    <div
+                        class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all">
+                        <div
+                            class="w-14 h-14 gradient-accent rounded-xl flex items-center justify-center mb-6 text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Leather Division</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Specializing in premium leather goods and
+                            accessories crafted with precision for modern professionals.</p>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Premium Bags & Wallets</li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Professional Accessories
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2"></span>Global Export Standards
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all">
+                        <div class="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Travel Essentials</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Comprehensive range of travel products designed
+                            for comfort, security, and a hassle-free journey.</p>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-slate-900 rounded-full mr-2"></span>Ergonomic Luggage</li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-slate-900 rounded-full mr-2"></span>Security Accessories</li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-slate-900 rounded-full mr-2"></span>Comfort Solutions</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all">
+                        <div class="w-14 h-14 bg-amber-800 rounded-xl flex items-center justify-center mb-6 text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Premium Coffee</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Sourcing and distributing the finest coffee beans
+                            to deliver exceptional quality in every cup.</p>
+                        <ul class="space-y-3 text-sm text-slate-500">
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-amber-800 rounded-full mr-2"></span>Specialty Sourcing</li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-amber-800 rounded-full mr-2"></span>Wholesale Distribution
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 bg-amber-800 rounded-full mr-2"></span>Quality Roasts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="contact" class="page-content">
+        <section class="gradient-primary pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-400 rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center animate-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Get In Touch</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">Ready to discuss your next business opportunity? Our
+                    team is here to help.</p>
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-1 space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Corporate Office</h3>
+                            <p class="text-slate-600">Trade Line International Headquarters<br />Global Business
+                                District</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
+                            <p class="text-slate-600">info@tradelineinternational.com</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Business Hours</h3>
+                            <p class="text-slate-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2">
+                        <form
+                            class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-cyan-500 outline-none"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                                <input type="email"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-cyan-500 outline-none"
+                                    placeholder="john@company.com">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
+                                <select
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-cyan-500 outline-none">
+                                    <option>Business Partnership</option>
+                                    <option>Wholesale Inquiry</option>
+                                    <option>General Support</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                                <textarea rows="4"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-cyan-500 outline-none"
+                                    placeholder="How can we help you?"></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit"
+                                    class="w-full py-4 gradient-accent text-white font-bold rounded-xl hover:opacity-90 shadow-lg">Send
+                                    Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="whyUS" class="page-content">
+        <section class="gradient-primary pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 right-10 w-72 h-72 bg-cyan-400 rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center animate-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Why Partner With Us?</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    Combining 15 years of industry excellence with a customer-focused approach to deliver value across
+                    every division.
+                </p>
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div
+                        class="flex gap-6 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow bg-slate-50">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 gradient-accent rounded-xl flex items-center justify-center text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Quality First Commitment</h3>
+                            <p class="text-slate-600 leading-relaxed">Rigorous quality control processes ensure all
+                                products meet and exceed international standards, providing our partners with complete
+                                peace of mind.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex gap-6 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow bg-slate-50">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 gradient-accent rounded-xl flex items-center justify-center text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Global Reach & Network</h3>
+                            <p class="text-slate-600 leading-relaxed">Leverage an established network spanning multiple
+                                continents and more than 50 global partners to facilitate seamless trade and
+                                distribution.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex gap-6 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow bg-slate-50">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 gradient-accent rounded-xl flex items-center justify-center text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">A Reliable Partner</h3>
+                            <p class="text-slate-600 leading-relaxed">We focus on building long-term relationships
+                                through transparency, honesty, and consistent ethical practices across all business
+                                divisions.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex gap-6 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow bg-slate-50">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 gradient-accent rounded-xl flex items-center justify-center text-white">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">B2B Specialization</h3>
+                            <p class="text-slate-600 leading-relaxed">Providing specialized solutions tailored
+                                specifically for wholesale clients and business partners to ensure mutual growth and
+                                success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900 text-white overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Built on 15 Years of <span
+                                class="text-cyan-400">Excellence</span></h2>
+                        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            Our decade-and-a-half journey has allowed us to perfect the synergy between our leather,
+                            travel, and coffee divisions. We leverage this multi-industry expertise to provide a unique
+                            vantage point for our partners.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>100% Quality Commitment in every cup and craft</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Specialized divisions for focused expertise</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Sustainable and responsible business practices</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-white/10 rounded-3xl p-12 backdrop-blur-sm">
+                            <div class="text-6xl font-extrabold text-cyan-400 mb-4">50+</div>
+                            <div class="text-2xl font-bold mb-4">Global Partners</div>
+                            <p class="text-slate-400">Join a growing network of satisfied business partners worldwide
+                                who trust Trade Line International for premium quality and reliable delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Ready to Grow Together?</h2>
+                <p class="text-xl text-slate-600 mb-10">Experience the difference of working with a partner that values
+                    quality, trust, and your business success.</p>
+                <a href="#"
+                    class="inline-block px-10 py-5 gradient-accent text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-xl shadow-cyan-500/20">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-slate-900 py-12 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-6">
+                <div class="w-8 h-8 gradient-accent rounded flex items-center justify-center font-bold">TL</div>
+                <span class="text-xl font-bold">Trade Line International</span>
+            </div>
+            <p class="text-slate-400 text-sm">© 2025 Trade Line International Corporate Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Reset all nav links: remove active states and specific color overrides
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active', '!text-cyan-600', 'bg-slate-100');
+            });
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Highlight the active nav link specifically
+            const activeLink = document.querySelector(`.nav-link[onclick*="${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active', '!text-cyan-600');
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+        }
+
+
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Handle sticky navbar background
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+
+</html>
