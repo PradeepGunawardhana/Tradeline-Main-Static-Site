@@ -124,7 +124,7 @@
                     class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">About</a>
                 <a href="#" onclick="showPage('businesses')"
                     class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Businesses</a>
-                <a href="#" onclick="showPage('why-us')"
+                <a href="#" onclick="showPage('whyUS')"
                     class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">Why
                     Us</a>
                 <a href="#" onclick="showPage('contact')"
@@ -836,6 +836,8 @@
 
             // Show selected page
             document.getElementById(pageId).classList.add('active');
+
+
 
             // Highlight the active nav link specifically
             const activeLink = document.querySelector(`.nav-link[onclick*="${pageId}"]`);
